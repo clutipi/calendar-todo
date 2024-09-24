@@ -1,28 +1,50 @@
 .robotoMono{
   font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
+},
 
 .robotoMono input{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-}
+},
 
 .robotoMono .rs-calendar-table{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-}
+},
 
 .robotoMono .rs-picker-toggle{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+},
+
+.taskTitle {
+  font-size: 20px;
+  font-weight: 500;
 }
 
+.adicionarTarefa{
+  color: black;
+  background-color: white;
+  border: 1px solid #272727;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.adicionarTarefa:focus{
+  color: black;
+  background-color: white;
+  border: 1px solid #272727;
+  border-radius: 4px;
+  height: 40px;
+  outline: none;
+}
+
+.customButton{
+  background-color: #272727;
+}
