@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const TaskSchema = new mongoose.Schema({ // Define a estrutura dos documentos que serão armazenados na coleção tasks do MongoDB
      title: {type: String, required: true},
      description: String,
-     date: {type: Date, required: true},
+     date: {type: String, required: true},
      status: {type: Boolean, default:false}
 })
 

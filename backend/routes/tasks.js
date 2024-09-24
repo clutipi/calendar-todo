@@ -6,25 +6,43 @@ const router = express.Router();
 const Task = require('../models/Task');
 
 // Rota POST
-router.post('/', async(req, res) => {// Definindo uma rota HTTP POST no caminho '/' *******router.post(caminho, função)
+router.post('/', async (req, res) => {
      try {
+          const { title, description, date, status } = req.body;
+          
+          // Cria um novo objeto date da string que foi recebida
+          const taskDate = new Date(date);
+
+          // Formata a string para 'YYYY-MM-DD'
+          const formattedDate = taskDate.toISOString().split('T')[0];
+     
           const task = new Task({
-               title: req.body.title,
-               description: req.body.description,
-               date: req.body.date,
-               status: req.body.status
+          title,
+          description,
+          date: formattedDate,
+          status
           });
+     
           await task.save();
           res.status(201).send(task);
-     } catch (error) {
+          } catch (error) {
           res.status(400).send(error);
-     }
-});
+          }
+   });
+   
 
 // Rota GET
 router.get('/', async(req, res) => {
      try {
-          const tasks = await Task.find();
+          const { date } = req.query;
+
+          let tasks;
+          if (date) {
+               tasks = await Task.find({ date });
+          } else {
+               tasks = await Task.find();
+          }
+          
           res.send(tasks);
      } catch (error) {
           res.status(500).send(error);
@@ -82,7 +100,7 @@ router.delete('/:id', async(req, res) => {
      const task = await Task.findByIdAndDelete(req.params.id);
 
      if (!task) {
-          return req.status(404).send({ message: 'task não encontrada'});
+          return res.status(404).send({ message: 'task não encontrada'});
      }
 
      res.status(200).send({ message: 'Tarefa excluída com sucesso'});
