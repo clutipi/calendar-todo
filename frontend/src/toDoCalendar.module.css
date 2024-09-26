@@ -1,27 +1,24 @@
 .robotoMono{
   font-family: "Roboto Mono", monospace;
-},
+}
 
 .robotoMono input{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-},
+  font-weight: 400;
+}
 
 .robotoMono .rs-calendar-table{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-},
+  font-weight: 400;
+}
 
 .robotoMono .rs-picker-toggle{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-},
+  font-weight: 400;
+}
 
 .taskTitle {
   font-size: 20px;
@@ -47,4 +44,19 @@
 
 .customButton{
   background-color: #272727;
+}
+
+.deleteTaskIcon {
+  color: #636363;
+  transition: color 0.15s;
+}
+
+.deleteTaskContainer{
+  width: 24px;
+  height: 24px;
+}
+
+.deleteTaskContainer :hover{
+  cursor: pointer;
+  color: #ee005b;
 }

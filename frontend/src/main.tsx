@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import MyComponent from './App.tsx'
+import { TodoCalendar } from './TodoCalendar.tsx'
 import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <MyComponent />
+    <TodoCalendar />
   </StrictMode>,
 )
